@@ -4,8 +4,7 @@
   "description": "REST Server Backend for BookMonkey",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "forever start --minUptime 1000 --spinSleepTime 1000 server.js"
+    "start": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
   },
   "author": "",
   "license": "MIT",
