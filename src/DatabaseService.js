@@ -3,7 +3,7 @@
 var SimpleDb = require('simple-node-db');
 
 //initialize database
-var db = new SimpleDb('./database');
+var db = new SimpleDb('../database');
 
 /***************************************/
 

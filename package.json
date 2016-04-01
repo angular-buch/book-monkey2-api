@@ -4,6 +4,7 @@
   "description": "REST Server Backend for BookMonkey",
   "main": "server.js",
   "scripts": {
+    "devStart": "node server.js",
     "start": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
   },
   "author": "",
@@ -12,6 +13,8 @@
     "restify": "^4.0.4",
     "restify-routing": "^0.3.8",
     "simple-node-db": "^0.90.37",
+    "node-restify-swagger": "^0.1.8",
+    "node-restify-validation": "^1.0.4",
     "forever": "^0.15.1"
   }
 }
