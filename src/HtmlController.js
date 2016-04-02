@@ -9,7 +9,7 @@ var html =
   <body>\n\
     <h1>BookMonkey2 API</h1>\n\
     <ul>\n\
-      <li><a href="/api/v1/books">GET /api/v1/books</a></li>\n\
+      <li><a href="/books">GET /books</a></li>\n\
       </ul>\n\
     <hr>\n\
     swagger spec doc: <a href="/swagger/resources.json">/swagger/resources.json</a>\n\
