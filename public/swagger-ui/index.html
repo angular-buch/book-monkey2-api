@@ -35,12 +35,12 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-         // CHANGED by johannes
-        var server = location.protocol
-            + '//'
-            + location.hostname
-            + (location.port ? ':' + location.port: '');
-        url = server + "/v2/swagger.json";
+        // CHANGED by johannes
+       var server = location.protocol
+           + '//'
+           + location.hostname
+           + (location.port ? ':' + location.port: '');
+       url = server + "/v2/swagger.json";
       }
 
       // Pre load translate...
@@ -112,7 +112,7 @@
 </head>
 
 <body class="swagger-section">
-<div id='header'>
+<div id='header' style="display:none">
   <div class="swagger-ui-wrap">
     <a id="logo" href="http://swagger.io">swagger</a>
     <form id='api_selector'>
