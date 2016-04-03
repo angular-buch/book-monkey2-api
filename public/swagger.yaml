@@ -1,0 +1,110 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: BookMonkey2 API
+  description: |
+    **DEMO**
+
+    This is a simple backend for the Angular 2.0 Demo "Book Monkey"
+    
+    See [angular2buch.de](https://angular2buch.de/) for more information.
+host: book-monkey2-api.angular2buch.de
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /books:
+    get:
+      summary: Get all books
+      responses:
+        200:
+          description: List of all books
+          schema:
+            title: Books
+            type: array
+            items:
+              $ref: '#/definitions/Book'
+              
+              
+  /book:
+    post:
+      summary: Creates a new book
+      parameters:
+        - name: book
+          in: body
+          description: A new book to be stored
+          schema:
+            $ref: '#/definitions/Book'
+          required: true
+      responses:
+        201:
+          description: Book was created
+        400: 
+          description: Invalid data
+        409:
+          description: Book does already exist 
+          
+  /book/{isbn}:
+  
+    get:
+      summary: Returns a single book
+      parameters:
+        - name: isbn
+          in: path
+          type: string
+          description: ISBN of the book
+          required: true
+      responses:
+        200:
+          description: Sends the pet with pet Id
+          
+    put:
+      summary: Updates an existing book
+      description: Requires a full book entry, ISBN in query and body must match
+      parameters:
+        - name: isbn
+          in: path
+          description: ISBN of the book to update
+          required: true
+          type: string
+        - name: book
+          in: body
+          description: An existing book to update
+          schema:
+            $ref: '#/definitions/Book'
+          required: true
+      responses:
+        200:
+          description: Book was updated
+        400: 
+          description: Invalid data
+        404:
+          description: Book does not exist 
+          
+    delete:
+      summary: Deletes a book
+      parameters:
+        - name: isbn
+          in: path
+          description: ISBN of the book to delete
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Book was deleted or did not exist
+
+
+definitions:
+  Book:
+    type: object
+    properties:
+      name:
+        type: string
+      birthday:
+        type: integer
+        format: int32
+
