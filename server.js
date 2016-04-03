@@ -8,7 +8,7 @@ server.use(restify.bodyParser());
 server.use(restify.CORS({}));
 server.use(restify.queryParser());
 
-server.get(/^(?!\/books).*$/, restify.serveStatic({
+server.get(/^(?!\/books).*/, restify.serveStatic({
   directory: './public/',
   default: 'index.html'
 }));
