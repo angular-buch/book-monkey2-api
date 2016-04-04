@@ -8,6 +8,7 @@ exports.getAll = function(req, res, next){
     dbservice.getAllBooks(function(err, list){
         if(err) return next(err);
         res.send(list);
+        next();
     });
 };
 
@@ -19,11 +20,12 @@ exports.getByISBN = function(req, res, next){
         if(err) return next(err);
 
         // error if record doesn't exist
-        if(row === undefined){
+        if(!row){
             return next(new restify.NotFoundError('Book does not exist'));
         }
 
         res.send(row);
+        next();
     });
 };
 
@@ -47,6 +49,7 @@ exports.create = function(req, res, next){
         dbservice.createBook(book, function(err){
             if(err) return next(err);
             res.send(201); // 201 Created
+            next();
         });
     });
 };
@@ -68,13 +71,14 @@ exports.update = function(req, res, next){
         if(err) return next(err);
 
         // error if record doesn't exist
-        if(row === undefined){
+        if(!row){
             return next(new restify.NotFoundError('Book does not exist'));
         }
 
         dbservice.updateBook(book, function(err){
             if(err) return next(err);
             res.send(200);
+            next();
         });
     });
 };
@@ -86,5 +90,6 @@ exports.delete = function(req, res, next){
     dbservice.deleteBook(isbn, function(err){
         if(err) return next(err);
         res.send(200);
+        next();
     });
 };

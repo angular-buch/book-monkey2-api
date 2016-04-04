@@ -24,7 +24,17 @@ exports.getAllBooks = function(callback){
 
 exports.getBookByISBN = function(isbn, callback){
     var key = db.createDomainKey('book', isbn);
-    db.find(key, callback);
+
+    db.find(key, function(err, row){
+
+      // 'Key not found in database' is not considered as an error
+      // hint: this 'error' will be still shown in console, you can ignore it
+      if (err && err.type === 'NotFoundError') {
+        callback(undefined, undefined)
+      } else {
+        callback(err, row)
+      }
+    });
 };
 
 exports.createBook = function(book, callback){
