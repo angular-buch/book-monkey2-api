@@ -6,7 +6,7 @@ info:
     **DEMO**
 
     This is a simple backend for the Angular 2.0 Demo "Book Monkey"
-    
+
     See [angular2buch.de](https://angular2buch.de/) for more information.
 #host: book-monkey2-api.angular2buch.de
 #host: localhost:3000
@@ -18,13 +18,13 @@ consumes:
 produces:
   - application/json
 tags:
-- name: "book"
-  description: "BookMonkey books"
+- name: book
+  description: BookMonkey2 books with thumbnails
 paths:
   /books:
     get:
       tags:
-        - "book"
+        - book
       summary: Get all books
       responses:
         200:
@@ -34,8 +34,8 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Book'
-              
-              
+
+
   /book:
     post:
       tags:
@@ -51,16 +51,16 @@ paths:
       responses:
         201:
           description: Book was created
-        400: 
+        400:
           description: Invalid data
         409:
-          description: Book does already exist 
-          
+          description: Book does already exist
+
   /book/{isbn}:
-  
+
     get:
       tags:
-      - "book"
+      - book
       summary: Returns a single book
       parameters:
         - name: isbn
@@ -71,10 +71,10 @@ paths:
       responses:
         200:
           description: Sends the pet with pet Id
-          
+
     put:
       tags:
-      - "book"
+      - book
       summary: Updates an existing book
       description: Requires a full book entry, ISBN in query and body must match
       parameters:
@@ -92,14 +92,14 @@ paths:
       responses:
         200:
           description: Book was updated
-        400: 
+        400:
           description: Invalid data
         404:
-          description: Book does not exist 
-          
+          description: Book does not exist
+
     delete:
       tags:
-      - "book"
+      - book
       summary: Deletes a book
       parameters:
         - name: isbn
@@ -108,7 +108,7 @@ paths:
           required: true
           type: string
       responses:
-        '200':
+        200:
           description: Book was deleted or did not exist
 
 
@@ -131,24 +131,28 @@ definitions:
         type: array
         items:
           type: string
-          example: Gregor Woiwode
-        description: "Optional: list of all authors of the book"
+          example:
+            - Gregor Woiwode
+            - Ferdinand Malcher
+            - Danny Koppenhagen
+            - Johannes Hoppe
+        description: List of all authors of the book
       subtitle:
         type: string
-        description: "Optional: subtitle of the book"
+        description: Subtitle of the book
       rating:
         type: integer
         format: int32
         example: 5
-        description: "Optional: rating 'in starts' of the book, from one star (bad) to five stars (great)"        
+        description: Rating 'in starts' of the book, from one star (bad) to five stars (great)
       published:
         type: string
         format: date-time
-        example: "2016-06-01T00:00:00.000Z"
-        description: "Optional: date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();"
+        example: 2016-06-01T00:00:00.000Z
+        description: date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();
       description:
         type: string
-        description: "Optional: short description of the book"
+        description: Short description of the book
       thumbnails:
         type: array
         items:
@@ -168,4 +172,3 @@ definitions:
         type: string
         example: Front Cover
         description: Caption of the image
-

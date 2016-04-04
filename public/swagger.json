@@ -18,7 +18,7 @@
     "tags": [
         {
             "name": "book",
-            "description": "BookMonkey books"
+            "description": "BookMonkey2 books with thumbnails"
         }
     ],
     "paths": {
@@ -173,29 +173,34 @@
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "example": "Gregor Woiwode"
+                        "example": [
+                            "Gregor Woiwode",
+                            "Ferdinand Malcher",
+                            "Danny Koppenhagen",
+                            "Johannes Hoppe"
+                        ]
                     },
-                    "description": "Optional: list of all authors of the book"
+                    "description": "List of all authors of the book"
                 },
                 "subtitle": {
                     "type": "string",
-                    "description": "Optional: subtitle of the book"
+                    "description": "Subtitle of the book"
                 },
                 "rating": {
                     "type": "integer",
                     "format": "int32",
                     "example": 5,
-                    "description": "Optional: rating 'in starts' of the book, from one star (bad) to five stars (great)"
+                    "description": "Rating 'in starts' of the book, from one star (bad) to five stars (great)"
                 },
                 "published": {
                     "type": "string",
                     "format": "date-time",
                     "example": "2016-06-01T00:00:00.000Z",
-                    "description": "Optional: date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();"
+                    "description": "date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Optional: short description of the book"
+                    "description": "Short description of the book"
                 },
                 "thumbnails": {
                     "type": "array",
