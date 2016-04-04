@@ -5,7 +5,6 @@
         "title": "BookMonkey2 API",
         "description": "**DEMO**\n\nThis is a simple backend for the Angular 2.0 Demo \"Book Monkey\"\n\nSee [angular2buch.de](https://angular2buch.de/) for more information.\n"
     },
-    "host": "book-monkey2-api.angular2buch.de",
     "basePath": "/",
     "schemes": [
         "http"
@@ -16,9 +15,18 @@
     "produces": [
         "application/json"
     ],
+    "tags": [
+        {
+            "name": "book",
+            "description": "BookMonkey books"
+        }
+    ],
     "paths": {
         "/books": {
             "get": {
+                "tags": [
+                    "book"
+                ],
                 "summary": "Get all books",
                 "responses": {
                     "200": {
@@ -36,6 +44,9 @@
         },
         "/book": {
             "post": {
+                "tags": [
+                    "book"
+                ],
                 "summary": "Creates a new book",
                 "parameters": [
                     {
@@ -63,6 +74,9 @@
         },
         "/book/{isbn}": {
             "get": {
+                "tags": [
+                    "book"
+                ],
                 "summary": "Returns a single book",
                 "parameters": [
                     {
@@ -80,6 +94,9 @@
                 }
             },
             "put": {
+                "tags": [
+                    "book"
+                ],
                 "summary": "Updates an existing book",
                 "description": "Requires a full book entry, ISBN in query and body must match",
                 "parameters": [
@@ -113,6 +130,9 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "book"
+                ],
                 "summary": "Deletes a book",
                 "parameters": [
                     {
@@ -134,13 +154,74 @@
     "definitions": {
         "Book": {
             "type": "object",
+            "required": [
+                "isbn",
+                "title"
+            ],
             "properties": {
-                "name": {
-                    "type": "string"
+                "isbn": {
+                    "type": "string",
+                    "example": "999-9-99999-999-9",
+                    "description": "ISBN, which is used as identifier"
                 },
-                "birthday": {
+                "title": {
+                    "type": "string",
+                    "example": "Angular2",
+                    "description": "Title of the book"
+                },
+                "authors": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "example": "Gregor Woiwode"
+                    },
+                    "description": "Optional: list of all authors of the book"
+                },
+                "subtitle": {
+                    "type": "string",
+                    "description": "Optional: subtitle of the book"
+                },
+                "rating": {
                     "type": "integer",
-                    "format": "int32"
+                    "format": "int32",
+                    "example": 5,
+                    "description": "Optional: rating 'in starts' of the book, from one star (bad) to five stars (great)"
+                },
+                "published": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2016-06-01T00:00:00.000Z",
+                    "description": "Optional: date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Optional: short description of the book"
+                },
+                "thumbnails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Thumbnail"
+                    },
+                    "description": "Images of the book, which are used as thumbnails"
+                }
+            }
+        },
+        "Thumbnail": {
+            "type": "object",
+            "required": [
+                "url",
+                "title"
+            ],
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "example": "https://angular2buch.de/angular2buch.jpg",
+                    "description": "Image to display"
+                },
+                "title": {
+                    "type": "string",
+                    "example": "Front Cover",
+                    "description": "Caption of the image"
                 }
             }
         }
