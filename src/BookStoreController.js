@@ -34,6 +34,8 @@ exports.create = function(req, res, next){
     var book = req.body;
     var isbn = book.isbn;
 
+    console.log(book);
+
     if (!isbn) {
       return next(new restify.BadRequestError('Invalid data: ISBN number is mandatory'));
     }
