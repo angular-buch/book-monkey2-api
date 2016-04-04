@@ -11,15 +11,6 @@ server.use(restify.CORS({}));
 server.use(restify.queryParser());
 
 
-//CORS
-server.opts(/\/.*/, function (req, res, next){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
-  res.send(200);
-});
-
-
 // serve public folder
 server.get(/^(?!\/book).*/, restify.serveStatic({
   directory: './public/',
