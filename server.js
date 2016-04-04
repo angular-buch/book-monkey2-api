@@ -20,11 +20,14 @@ server.get(/^(?!\/book).*/, restify.serveStatic({
 
 // API routes
 server.get('/books', bookStoreController.getAll);
+server.del('/books', bookStoreController.reset);
 server.post('/book', bookStoreController.create);
 server.get('/book/:isbn', bookStoreController.getByISBN);
 server.put('/book/:isbn', bookStoreController.update);
 server.del('/book/:isbn', bookStoreController.delete);
 
+// reset DB on every start
+bookStoreController.getDbservice().reset();
 
 // start server
 server.listen(port, function() {

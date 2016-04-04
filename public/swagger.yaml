@@ -38,8 +38,17 @@ paths:
           description: Unexpected Internal Server Error
           schema:
             $ref: '#/definitions/RestError'
-
-
+    delete:
+      tags:
+        - book
+      summary: Resets store to initial state
+      responses:
+        200:
+          description: All data is now on initial state
+        500:
+          description: Unexpected Internal Server Error
+          schema:
+            $ref: '#/definitions/RestError'           
   /book:
     post:
       tags:

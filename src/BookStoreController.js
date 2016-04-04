@@ -93,3 +93,16 @@ exports.delete = function(req, res, next){
         next();
     });
 };
+
+exports.getDbservice = function() {
+    return dbservice;    
+}
+
+exports.reset = function(req, res, next){
+
+    dbservice.reset(function(err) {
+        if(err) return next(err);
+        res.send(200);
+        next();
+    });
+};

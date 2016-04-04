@@ -1,9 +1,15 @@
 'use strict';
 
 var SimpleDb = require('simple-node-db');
+var async = require('async');
 
 //initialize database
 var db = new SimpleDb('../database');
+
+var allBooksParams = {
+    start: 'book:',
+    end: 'book:~'
+};
 
 /***************************************/
 
@@ -14,12 +20,7 @@ exports.getAllBooks = function(callback){
         }
     };
 
-    var params = {
-        start: 'book:',
-        end: 'book:~'
-    };
-
-    db.query(params, rowCallback, callback);
+    db.query(allBooksParams, rowCallback, callback);
 };
 
 exports.getBookByISBN = function(isbn, callback){
@@ -56,4 +57,19 @@ exports.deleteBook = function(isbn, callback){
 
     var key = db.createDomainKey('book', isbn);
     db.delete(key, callback);
+};
+
+exports.reset = function(callback){
+    
+    callback = callback || function() {};
+    
+    db.queryKeys(allBooksParams, function(err, list) { 
+      if (err) return callback(err);
+      
+      async.each(list, db.delete, function(err) {
+        if (err)  return callback(err);
+                
+        db.restore('./src/initial.db', callback);
+      });
+    });
 };
