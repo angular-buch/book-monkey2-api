@@ -38,6 +38,12 @@
                                 "$ref": "#/definitions/Book"
                             }
                         }
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
                     }
                 }
             }
@@ -74,6 +80,12 @@
                         "schema": {
                             "$ref": "#/definitions/RestError"
                         }
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
                     }
                 }
             }
@@ -102,6 +114,12 @@
                     },
                     "404": {
                         "description": "Book does not exist",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
                         "schema": {
                             "$ref": "#/definitions/RestError"
                         }
@@ -147,6 +165,12 @@
                         "schema": {
                             "$ref": "#/definitions/RestError"
                         }
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
                     }
                 }
             },
@@ -167,6 +191,12 @@
                 "responses": {
                     "200": {
                         "description": "Book was deleted or does not exist"
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
                     }
                 }
             }
@@ -183,8 +213,8 @@
             "properties": {
                 "isbn": {
                     "type": "string",
-                    "example": "978-3-86490-357-1",
-                    "description": "ISBN, which is used as identifier"
+                    "example": "9783864903571",
+                    "description": "ISBN, which is used as identifier - only numbers are allowed (no hyphens)"
                 },
                 "title": {
                     "type": "string",
@@ -194,15 +224,15 @@
                 "authors": {
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "example": [
-                            "Gregor Woiwode",
-                            "Ferdinand Malcher",
-                            "Danny Koppenhagen",
-                            "Johannes Hoppe"
-                        ]
+                        "type": "string"
                     },
-                    "description": "List of all authors of the book"
+                    "description": "List of all authors of the book",
+                    "example": [
+                        "Gregor Woiwode",
+                        "Ferdinand Malcher",
+                        "Danny Koppenhagen",
+                        "Johannes Hoppe"
+                    ]
                 },
                 "subtitle": {
                     "type": "string",
@@ -223,6 +253,7 @@
                 },
                 "description": {
                     "type": "string",
+                    "example": "Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular 2 am Beispiel erklärt.",
                     "description": "Short description of the book"
                 },
                 "thumbnails": {
@@ -258,8 +289,7 @@
             "type": "object",
             "description": "object which is following the convention of restify, see http://restify.com/#resterror",
             "required": [
-                "code",
-                "message"
+                "code"
             ],
             "properties": {
                 "code": {

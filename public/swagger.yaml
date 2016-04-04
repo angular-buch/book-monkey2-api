@@ -34,6 +34,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Book'
+        500:
+          description: Unexpected Internal Server Error
+          schema:
+            $ref: '#/definitions/RestError'
 
 
   /book:
@@ -59,6 +63,10 @@ paths:
           description: Book does already exist
           schema:
             $ref: '#/definitions/RestError'
+        500:
+          description: Unexpected Internal Server Error
+          schema:
+            $ref: '#/definitions/RestError'
 
   /book/{isbn}:
 
@@ -81,6 +89,10 @@ paths:
           description: Book does not exist
           schema:
             $ref: '#/definitions/RestError'
+        500:
+          description: Unexpected Internal Server Error
+          schema:
+            $ref: '#/definitions/RestError'        
 
     put:
       tags:
@@ -110,6 +122,10 @@ paths:
           description: Book does not exist
           schema:
             $ref: '#/definitions/RestError'
+        500:
+          description: Unexpected Internal Server Error
+          schema:
+            $ref: '#/definitions/RestError'
 
     delete:
       tags:
@@ -124,6 +140,10 @@ paths:
       responses:
         200:
           description: Book was deleted or does not exist
+        500:
+          description: Unexpected Internal Server Error
+          schema:
+            $ref: '#/definitions/RestError'
 
 
 definitions:
@@ -136,8 +156,8 @@ definitions:
     properties:
       isbn:
         type: string
-        example: 978-3-86490-357-1
-        description: ISBN, which is used as identifier
+        example: "9783864903571"
+        description: ISBN, which is used as identifier - only numbers are allowed (no hyphens)
       title:
         type: string
         example: Angular2
@@ -146,12 +166,12 @@ definitions:
         type: array
         items:
           type: string
-          example:
-            - Gregor Woiwode
-            - Ferdinand Malcher
-            - Danny Koppenhagen
-            - Johannes Hoppe
         description: List of all authors of the book
+        example:
+          - Gregor Woiwode
+          - Ferdinand Malcher
+          - Danny Koppenhagen
+          - Johannes Hoppe
       subtitle:
         type: string
         example: Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen
@@ -168,6 +188,7 @@ definitions:
         description: date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();
       description:
         type: string
+        example: Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular 2 am Beispiel erklärt.
         description: Short description of the book
       thumbnails:
         type: array
@@ -194,7 +215,6 @@ definitions:
     description: "object which is following the convention of restify, see http://restify.com/#resterror"
     required:
     - code
-    - message
     properties:
       code:
         type: string
