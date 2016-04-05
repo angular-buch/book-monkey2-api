@@ -2,7 +2,6 @@
   "name": "book-monkey2-api",
   "version": "1.0.0",
   "description": "REST Server Backend for BookMonkey",
-  "main": "server.js",
   "scripts": {
     "devStart": "node server.js",
     "start": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
@@ -15,5 +14,6 @@
     "simple-node-db": "^0.90.37",
     "async": "^2.0.0-rc.2",
     "forever": "^0.15.1"
-  }
+  },
+  "keywords": ["ember-addon"]
 }
