@@ -1,5 +1,5 @@
 node_modules/**/*
-database/**/*
+.database/**/*
 .DS_Store
 
 .vscode/launch.json

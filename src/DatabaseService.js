@@ -3,8 +3,9 @@
 var SimpleDb = require('simple-node-db');
 var async = require('async');
 
-//initialize database
-var db = new SimpleDb('../database');
+// initialize database
+// dotfile lets ember-cli watch ignore the directory
+var db = new SimpleDb(__dirname + '/../.database'); 
 
 var allBooksParams = {
     start: 'book:',
@@ -69,7 +70,7 @@ exports.reset = function(callback){
       async.each(list, db.delete, function(err) {
         if (err)  return callback(err);
                 
-        db.restore('./src/initial.db', callback);
+        db.restore(__dirname + '/initial.db', callback);
       });
     });
 };

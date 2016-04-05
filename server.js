@@ -13,7 +13,7 @@ server.use(restify.queryParser());
 
 // serve public folder
 server.get(/^(?!\/book).*/, restify.serveStatic({
-  directory: './public/',
+  directory: __dirname + '/public/',
   default: 'index.html'
 }));
 
@@ -31,5 +31,7 @@ bookStoreController.getDbservice().reset();
 
 // start server
 server.listen(port, function() {
-  console.log('Server running at %s', server.url);
+  console.log('BookMonkey2 API server on %s', server.url);
 });
+
+module.exports = server;
