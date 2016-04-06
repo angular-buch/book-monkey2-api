@@ -8,4 +8,4 @@ RUN npm install --production
 ADD . .
 
 EXPOSE 3000
-CMD ["npm","start"]  
+CMD ["npm", "run", "startForever"]  

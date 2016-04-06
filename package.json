@@ -1,12 +1,40 @@
 {
   "name": "book-monkey2-api",
-  "version": "1.0.0",
-  "description": "REST Server Backend for BookMonkey",
-  "scripts": {
-    "devStart": "node server.js",
-    "start": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
+  "version": "0.1.0",
+  "description": "REST Server Backend for the BookMonkey2 demo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angular2Buch/book-monkey2-api.git"
   },
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/Angular2Buch/book-monkey2-api/issues"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "startForever": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
+  },
+  "author": {
+    "name": "Angular2Buch Team",
+    "email": "team@angular2buch.de"
+  },
+  "maintainers": [
+    {
+      "name": "johanneshoppe",
+      "email": "johannes.hoppe@haushoppe-its.de"
+    },
+    {
+      "name": "fmalcher",
+      "email": "mail@ferdinand-malcher.de"
+    },
+    {
+      "name": "d-koppenhagen",
+      "email": "mail@d-koppenhagen.de"
+    },
+    {
+      "name": "gregonnet",
+      "email": "gregor.woiwode@gmail.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "restify": "^4.0.4",
@@ -15,5 +43,5 @@
     "async": "^2.0.0-rc.2",
     "forever": "^0.15.1"
   },
-  "keywords": ["ember-addon"]
+  "keywords": ["ember-addon", "demo", "rest", "crud", "restify", "angular2", "angular-cli", "backend"]
 }
