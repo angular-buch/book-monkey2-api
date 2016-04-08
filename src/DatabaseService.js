@@ -8,8 +8,9 @@ var async = require('async');
 var db = new SimpleDb(__dirname + '/../.database'); 
 
 var allBooksParams = {
-    start: 'book:',
-    end: 'book:~'
+    start: 'book:~',
+    end: 'book:',
+    reverse: true
 };
 
 /***************************************/

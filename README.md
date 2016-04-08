@@ -3,7 +3,8 @@
 ![Monkey](public/images/monkey-thinking.png)
 
 REST Server Backend for the [BookMonkey2](https://github.com/Angular2Buch/book-monkey2) demo.  
-A publicly available server is hosted at [book-monkey2-api.angular2buch.de](http://book-monkey2-api.angular2buch.de/). It always serves the latest version (#master).  
+A publicly available server is hosted at [book-monkey2-api.angular2buch.de](http://book-monkey2-api.angular2buch.de/).  
+It always serves the latest version (#master).  
 The API is fully described via swagger. Explore it [here](http://book-monkey2-api.angular2buch.de/swagger-ui/#/book).
 
 # The book
@@ -15,7 +16,7 @@ Read more about Angular 2 in our book. Visit [angular2buch.de](https://angular2b
 
 # Usage
 
-The server is written in [restify](http://restify.com/). It provides CRUD operations over books.  
+The server is written on top of [restify](http://restify.com/). It provides CRUD operations over books.  
 The data is stored in the file system (via [simple-node-db](https://www.npmjs.com/package/simple-node-db)).
 
 ## Shared server

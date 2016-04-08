@@ -1,6 +1,6 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
