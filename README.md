@@ -1,4 +1,5 @@
 # book-monkey2-api
+[![NPM version][npm-image]][npm-url]
 
 ![Monkey](public/images/monkey-thinking.png)
 
@@ -52,3 +53,6 @@ ng serve
 
 # License
 Code released under the [MIT license](https://opensource.org/licenses/MIT).
+
+[npm-url]: https://npmjs.org/package/book-monkey2-api
+[npm-image]: https://badge.fury.io/js/book-monkey2-api.svg
