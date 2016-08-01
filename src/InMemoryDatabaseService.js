@@ -1,46 +1,32 @@
 'use strict';
 
-var SimpleDb = require('simple-node-db');
-var async = require('async');
+var allBooks = {};
 
-// initialize database
-// dotfile lets ember-cli watch ignore the directory
-var db = new SimpleDb(__dirname + '/../.database'); 
 
-var allBooksParams = {
-    start: 'book:~',
-    end: 'book:',
-    reverse: true
-};
+var shallowCopy = function(arr) {
+    return Array.prototype.slice.call(arr);
+}
+
+var normalizeKey = function(key) {
+
+}
+
 
 /***************************************/
 
 exports.getAllBooks = function(callback){
-    var rowCallback = function(key, value) {
-        if(key.indexOf('book:') >= 0){
-            return JSON.parse(value);
-        }
-    };
-
-    db.query(allBooksParams, rowCallback, callback);
+    callback(false, shallowCopy(allBooks).reverse())
 };
 
 exports.getBookByISBN = function(isbn, callback){
-    var key = db.createDomainKey('book', isbn);
-
-    db.find(key, function(err, row){
-
-      // 'Key not found in database' is not considered as an error
-      // hint: this 'error' will be still shown in console, you can ignore it
-      if (err && err.type === 'NotFoundError') {
-        callback(undefined, undefined)
-      } else {
-        callback(err, row)
-      }
-    });
+    callback(false, allBooks.find((book) => book.isbn == isbn));
 };
 
 exports.createBook = function(book, callback){
+
+    allBooks.push(book);
+    callback(false);
+
     if(!book) return callback(new Error('No record given'));
 
     var key = db.createDomainKey('book', book.isbn);

@@ -1,7 +1,7 @@
 'use strict';
 
 var restify = require('restify');
-var dbservice = require('./DatabaseService');
+var dbservice = require('./InMemoryDatabaseService');
 
 exports.getAll = function(req, res, next){
 
