@@ -1,6 +1,6 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
@@ -42,5 +42,5 @@
     "async": "^2.0.0-rc.2",
     "forever": "^0.15.1"
   },
-  "keywords": ["ember-addon", "demo", "rest", "crud", "restify", "angular2", "angular-cli", "backend"]
+  "keywords": ["demo", "rest", "crud", "restify"]
 }
