@@ -1,13 +1,13 @@
 'use strict';
 
 var restify = require('restify');
-var dbservice = require('./InMemoryDatabaseService');
+var dbservice = require('./inMemoryDB');
 
 exports.getAll = function(req, res, next){
 
     dbservice.getAllBooks(function(err, list){
         if(err) return next(err);
-        res.send(list);
+        res.send(list, {'Content-Type': 'application/json; charset=utf-8'});
         next();
     });
 };
@@ -24,7 +24,7 @@ exports.getByISBN = function(req, res, next){
             return next(new restify.NotFoundError('Book does not exist'));
         }
 
-        res.send(row);
+        res.send(row, {'Content-Type': 'application/json; charset=utf-8'});
         next();
     });
 };
