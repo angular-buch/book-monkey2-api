@@ -36,18 +36,20 @@ npm install
 npm start
 ```
 
+Open __http://localhost:3000/__ in your brower.
+
 ## Angular-CLI
 
 This package is a [ember-cli](http://ember-cli.com/) / [angular-cli](https://github.com/angular/angular-cli) addon, too.  
-Add it to the `node_modules` folder and it will be automatically available at __localhost:3000__ during development.
+Add it to the `node_modules` folder and it will be automatically available as a new command.
 
 ```
 cd <your-angular-cli-project>
-npm install book-monkey2-api --saveDev
-ng serve
+npm install book-monkey2-api --save-dev
+ng monkey
 ```
 
-![ng serve](public/images/ng-serve.png)
+<!--![ng serve](public/images/ng-serve.png)-->
 
 
 # License
