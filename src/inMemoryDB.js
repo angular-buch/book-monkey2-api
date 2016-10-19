@@ -33,6 +33,11 @@ exports.getBookByISBN = function (isbn, callback) {
     callback(false, allBooks[isbn]);
 };
 
+exports.isbnExists = function (isbn, callback) {
+    var isbn = normalizeIsbn(isbn);
+    callback(false, allBooks.hasOwnProperty(isbn));
+};
+
 exports.createBook = function (book, callback) {
     if (!book) return callback(new Error('No record given'));
 

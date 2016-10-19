@@ -29,6 +29,18 @@ exports.getByISBN = function (req, res, next) {
     });
 };
 
+exports.checkISBN = function (req, res, next) {
+
+    var isbn = req.params.isbn;
+
+    dbservice.isbnExists(isbn, function (err, exists) {
+        if (err) return next(err);
+
+        res.send(exists, { 'Content-Type': 'application/json; charset=utf-8' });
+        next();
+    });
+};
+
 exports.create = function (req, res, next) {
 
     var book = req.body;

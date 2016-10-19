@@ -217,6 +217,34 @@
                     }
                 }
             }
+        },
+        "/book/{isbn}/check": {
+            "get": {
+                "tags": [
+                    "book"
+                ],
+                "summary": "Returns whether ISBN exists or not",
+                "parameters": [
+                    {
+                        "name": "isbn",
+                        "in": "path",
+                        "type": "string",
+                        "description": "ISBN of the book",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns whether the ISBN exists in the database or not (boolean)"
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
