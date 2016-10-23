@@ -1,6 +1,8 @@
-node_modules/**/*
-.database/**/*
+node_modules
+.database
 .DS_Store
-
-.vscode/launch.json
 npm-debug.log
+
+src/**/*.d.ts
+src/**/*.js.map
+src/**/*.js

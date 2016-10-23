@@ -1,6 +1,6 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
@@ -10,8 +10,9 @@
     "url": "https://github.com/Angular2Buch/book-monkey2-api/issues"
   },
   "scripts": {
-    "start": "node server.js",
-    "startForever": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
+    "build": "tsc",
+    "start": "tsc && node server.js",
+    "startForever": "tsc && forever --minUptime 1000 --spinSleepTime 1000 server.js"
   },
   "author": {
     "name": "Angular2Buch Team",
@@ -37,9 +38,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "restify": "^4.1.1",
-    "forever": "^0.15.2",
-    "lodash": "^4.15.0"
+    "restify": "4.1.1",
+    "forever": "0.15.2",
+    "lodash": "4.16.4"
+  },
+  "devDependencies": {
+    "@types/restify": "2.0.33",
+    "@types/lodash": "4.14.37",
+    "typescript": "2.0.3"
   },
   "peerDependencies": {
     "ember-cli": "^2.5.0"
