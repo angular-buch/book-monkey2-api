@@ -41,6 +41,10 @@ exports.isbnExists = function (isbn, callback) {
 exports.createBook = function (book, callback) {
     if (!book) return callback(new Error('No record given'));
 
+    if (!book.rating)    book.rating = 3; // set rating to average
+    if (book.rating < 1) book.rating = 1; // set rating minimum
+    if (book.rating > 5) book.rating = 5; // set rating maximum
+
     var isbn = normalizeIsbn(book.isbn);
     allBooks[isbn] = book;
     callback(false);

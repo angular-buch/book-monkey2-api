@@ -118,3 +118,30 @@ exports.reset = function (req, res, next) {
         next();
     });
 };
+
+exports.rate = function (req, res, next) {
+    var isbn = req.params.isbn;
+    var rating = req.body.rating;
+
+    if (!rating) {
+        return next(new restify.BadRequestError('Invalid data: rating is mandatory'));
+    }
+
+    dbservice.getBookByISBN(isbn, function (err, book) {
+        if (err) return next(err);
+
+        // error if record already exists
+        if (!book) {
+            return next(new restify.NotFoundError('Book does not exist'));
+        }
+
+        // set new rating value
+        book.rating = rating;
+
+        dbservice.updateBook(book, function (err) {
+            if (err) return next(err);
+            res.send(200); // 200 success
+            next();
+        });
+    });
+};

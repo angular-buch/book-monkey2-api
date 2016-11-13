@@ -245,6 +245,55 @@
                     }
                 }
             }
+        },
+        "/book/{isbn}/rate": {
+            "post": {
+                "tags": [
+                    "book"
+                ],
+                "summary": "Updates rating of a book to a given value",
+                "parameters": [
+                    {
+                        "name": "isbn",
+                        "in": "path",
+                        "type": "string",
+                        "description": "ISBN of the book",
+                        "required": true
+                    },
+                    {
+                        "name": "rating",
+                        "in": "body",
+                        "description": "The new rating value for the given book",
+                        "schema": {
+                            "$ref": "#/definitions/Rating"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Rating has been updated"
+                    },
+                    "400": {
+                        "description": "Invalid data",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
+                    },
+                    "404": {
+                        "description": "Book does not exist",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -287,7 +336,9 @@
                 "rating": {
                     "type": "integer",
                     "format": "int32",
-                    "example": 5,
+                    "example": 4,
+                    "minimum": 1,
+                    "maximum": 5,
                     "description": "Rating 'in starts' of the book, from one star (bad) to five stars (great)"
                 },
                 "published": {
@@ -327,6 +378,23 @@
                     "type": "string",
                     "example": "Front Cover",
                     "description": "Caption of the image"
+                }
+            }
+        },
+        "Rating": {
+            "type": "object",
+            "description": "An object with a rating value (1...5)",
+            "required": [
+                "rating"
+            ],
+            "properties": {
+                "rating": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 4,
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Rating value for a book from one star (bad) to five stars (great)"
                 }
             }
         },
