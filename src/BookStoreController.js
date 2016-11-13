@@ -95,7 +95,7 @@ exports.update = function (req, res, next) {
     });
 };
 
-exports.delete = function (req, res, next) {
+exports.del = function (req, res, next) {
 
     var isbn = req.params.isbn;
 

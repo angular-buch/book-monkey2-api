@@ -28,7 +28,7 @@ server.post('/book/:isbn/rate', bookStoreController.rate);
 server.get('/book/:isbn', bookStoreController.getByISBN);
 server.get('/book/:isbn/check', bookStoreController.checkISBN);
 server.put('/book/:isbn', bookStoreController.update);
-server.del('/book/:isbn', bookStoreController.delete);
+server.del('/book/:isbn', bookStoreController.del);
 server.get('/info', serverController.info);
 
 // reset DB on every start
