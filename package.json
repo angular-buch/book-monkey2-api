@@ -4,10 +4,10 @@
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Angular2Buch/book-monkey2-api.git"
+    "url": "git+https://github.com/angular-buch/book-monkey2-api.git"
   },
   "bugs": {
-    "url": "https://github.com/Angular2Buch/book-monkey2-api/issues"
+    "url": "https://github.com/angular-buch/book-monkey2-api/issues"
   },
   "scripts": {
     "start": "node server.js",
