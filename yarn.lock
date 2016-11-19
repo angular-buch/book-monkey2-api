@@ -459,7 +459,7 @@ forever-monitor@~1.7.0:
     ps-tree "0.0.x"
     utile "~0.2.1"
 
-forever@^0.15.2:
+forever@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/forever/-/forever-0.15.3.tgz#77d9d7e15fd2f511ad9d84a110c7dd8fc8ecebc2"
   dependencies:
@@ -812,9 +812,9 @@ lazy@~1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/lazy/-/lazy-1.0.11.tgz#daa068206282542c088288e975c297c1ae77b690"
 
-lodash@^4.15.0:
-  version "4.16.6"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
+lodash@^4.17.2:
+  version "4.17.2"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
 lru-cache@^4.0.1:
   version "4.0.1"
@@ -1207,9 +1207,9 @@ request@^2.75.0:
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
-restify@^4.1.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/restify/-/restify-4.2.0.tgz#89dbf8a9f292e841a7f61fe8263be7b4fbe2c819"
+restify@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/restify/-/restify-4.3.0.tgz#03b67960d1d42a6dafcde3bd82fb882173a27678"
   dependencies:
     assert-plus "^0.1.5"
     backoff "^2.4.0"

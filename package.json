@@ -1,6 +1,6 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
@@ -37,9 +37,9 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "restify": "^4.1.1",
-    "forever": "^0.15.2",
-    "lodash": "^4.15.0"
+    "restify": "^4.3.0",
+    "forever": "^0.15.3",
+    "lodash": "^4.17.2"
   },
   "peerDependencies": {
     "ember-cli": "^2.5.0"

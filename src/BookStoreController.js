@@ -7,6 +7,12 @@ exports.getAll = function (req, res, next) {
 
     dbservice.getAllBooks(function (err, list) {
         if (err) return next(err);
+
+        // add a thumbnial if no Thumbnail is in data collection
+        list.forEach(function(row){
+          row = addThumbnailIfNotSet(row);
+        });
+
         res.send(list, { 'Content-Type': 'application/json; charset=utf-8' });
         next();
     });
@@ -23,6 +29,9 @@ exports.getByISBN = function (req, res, next) {
         if (!row) {
             return next(new restify.NotFoundError('Book does not exist'));
         }
+
+        // add a thumbnial if no Thumbnail is in data collection
+        row = addThumbnailIfNotSet(row);
 
         res.send(row, { 'Content-Type': 'application/json; charset=utf-8' });
         next();
@@ -145,3 +154,15 @@ exports.rate = function (req, res, next) {
         });
     });
 };
+
+function addThumbnailIfNotSet(book) {
+  if (!book.thumbnails || !book.thumbnails[0] || !book.thumbnails[0].url) {
+    book.thumbnails = book.thumbnails[0] = [
+        {
+            "url": "https://angular2buch.de/img/book.png",
+            "title": "Kein Vorschaubild verfügbar"
+        }
+    ]
+  }
+  return book;
+}
