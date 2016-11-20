@@ -3,16 +3,16 @@
 
 ![Monkey](public/images/monkey-thinking.png)
 
-REST Server Backend for the [BookMonkey2](https://github.com/Angular2Buch/book-monkey2) demo.  
-A publicly available server is hosted at [book-monkey2-api.angular2buch.de](http://book-monkey2-api.angular2buch.de/), which always serves the latest version (#master).  
-The API is fully described via swagger. Explore it [here](http://book-monkey2-api.angular2buch.de/swagger-ui/#/book).
+REST Server Backend for the [BookMonkey2](https://github.com/angular-buch/book-monkey2) demo.  
+A publicly available server is hosted at [book-monkey2-api.angular-buch.com](http://book-monkey2-api.angular-buch.com/), which always serves the latest version (#master).  
+The API is fully described via swagger. Explore it [here](http://book-monkey2-api.angular-buch.com/swagger-ui/#/book).
 
 # The book
 
-[![Book](public/images/book-thumbnail.png)](https://angular2buch.de/)
+[![Book](public/images/book-thumbnail.png)](https://angular-buch.com/)
 
 This backend is used to explain HTTP communication with Angular 2.  
-Read more about Angular 2 in our book. Visit [angular2buch.de](https://angular2buch.de/) for more information (German only).
+Read more about Angular 2 in our book. Visit [angular-buch.com](https://angular-buch.com/) for more information (German only).
 
 # Usage
 
@@ -21,7 +21,7 @@ The data is stored in memory only. Eveything will be lost on restart or when `DE
 
 ## Shared server
 
-A publicly available server is hosted at [book-monkey2-api.angular2buch.de](http://book-monkey2-api.angular2buch.de/).  
+A publicly available server is hosted at [book-monkey2-api.angular-buch.com](http://book-monkey2-api.angular-buch.com/).  
 Feel free to use it as your test-drive. __Data will be erased periodically.__
 
 ## Development
