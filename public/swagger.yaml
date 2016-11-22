@@ -7,12 +7,12 @@ info:
 
     This is a simple backend for the Angular 2.0 Demo "Book Monkey"
 
-    See [angular2buch.de](https://angular2buch.de/) for more information.
+    See [angular2buch.de](https://angular-buch.com/) for more information.
 #host: book-monkey2-api.angular2buch.de
 #host: localhost:3000
 basePath: /
 schemes:
-  - http
+  - https
 consumes:
   - application/json
 produces:
