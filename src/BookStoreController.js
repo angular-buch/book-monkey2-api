@@ -159,7 +159,7 @@ function addThumbnailIfNotSet(book) {
   if (!book.thumbnails || !book.thumbnails[0] || !book.thumbnails[0].url) {
     book.thumbnails = book.thumbnails[0] = [
         {
-            "url": "https://angular2buch.de/img/book.png",
+            "url": "https://angular-buch.com/img/book.png",
             "title": "Kein Vorschaubild verfügbar"
         }
     ]

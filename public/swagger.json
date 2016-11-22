@@ -3,7 +3,7 @@
     "info": {
         "version": "1.0.0",
         "title": "BookMonkey2 API",
-        "description": "**DEMO**\n\nThis is a simple backend for the Angular 2.0 Demo \"Book Monkey\"\n\nSee [angular2buch.de](https://angular-buch.com/) for more information.\n"
+        "description": "**DEMO**\n\nThis is a simple backend for the Angular 2.0 Demo \"Book Monkey\"\n\nSee [angular-buch.com](https://angular-buch.com/) for more information.\n"
     },
     "basePath": "/",
     "schemes": [
@@ -371,7 +371,7 @@
             "properties": {
                 "url": {
                     "type": "string",
-                    "example": "https://angular2buch.de/angular2buch.jpg",
+                    "example": "https://angular-buch.com/angular2buch.jpg",
                     "description": "Image to display"
                 },
                 "title": {
