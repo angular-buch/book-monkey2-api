@@ -371,7 +371,7 @@
             "properties": {
                 "url": {
                     "type": "string",
-                    "example": "https://angular-buch.com/angular2buch.jpg",
+                    "example": "https://angular-buch.com/angular-buch.jpg",
                     "description": "Image to display"
                 },
                 "title": {

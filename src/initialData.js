@@ -11,7 +11,7 @@
             "description": "Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular 2 am Beispiel erklärt.",
             "thumbnails": [
                 {
-                    "url": "https://angular-buch.com/angular2buch.jpg",
+                    "url": "https://angular-buch.com/angular-buch.jpg",
                     "title": "Front Cover"
                 }
             ],

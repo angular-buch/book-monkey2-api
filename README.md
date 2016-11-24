@@ -30,7 +30,7 @@ You might want to extend or modify the project.
 Execute the following commands to start the standalone-server:
 
 ```
-git clone https://github.com/Angular2Buch/book-monkey2-api.git
+git clone https://github.com/angular-buch/book-monkey2-api.git
 cd book-monkey2-api
 npm install
 npm start
