@@ -9,8 +9,8 @@ exports.getAll = function (req, res, next) {
         if (err) return next(err);
 
         // add a thumbnial if no Thumbnail is in data collection
-        list.forEach(function(row){
-          row = addThumbnailIfNotSet(row);
+        list.forEach(function (row) {
+            row = addThumbnailIfNotSet(row);
         });
 
         res.send(list, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -156,13 +156,11 @@ exports.rate = function (req, res, next) {
 };
 
 function addThumbnailIfNotSet(book) {
-  if (!book.thumbnails || !book.thumbnails[0] || !book.thumbnails[0].url) {
-    book.thumbnails = book.thumbnails[0] = [
-        {
+    if (!book.thumbnails || !book.thumbnails.length || !book.thumbnails[0].url) {
+        book.thumbnails = [{
             "url": "https://angular-buch.com/img/book.png",
             "title": "Kein Vorschaubild verfügbar"
-        }
-    ]
-  }
-  return book;
+        }]
+    }
+    return book;
 }
