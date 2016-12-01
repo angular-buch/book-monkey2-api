@@ -3,12 +3,12 @@
 
         "9783864903571": {
             "isbn": "9783864903571",
-            "title": "Angular 2",
+            "title": "Angular",
             "authors": ["Gregor Woiwode", "Ferdinand Malcher", "Danny Koppenhagen", "Johannes Hoppe"],
             "subtitle": "Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen",
             "rating": 5,
-            "published": "2016-06-01T00:00:00.000Z",
-            "description": "Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular 2 am Beispiel erklärt.",
+            "published": "2017-02-01T00:00:00.000Z",
+            "description": "Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular am Beispiel erklärt.",
             "thumbnails": [
                 {
                     "url": "https://angular-buch.com/angular-buch.jpg",
