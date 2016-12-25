@@ -1,6 +1,6 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
@@ -10,36 +10,24 @@
     "url": "https://github.com/angular-buch/book-monkey2-api/issues"
   },
   "scripts": {
-    "start": "node server.js",
-    "startForever": "forever --minUptime 1000 --spinSleepTime 1000 server.js"
+    "build": "tsc",
+    "start": "tsc && node server.js",
+    "startForever": "tsc && forever --minUptime 1000 --spinSleepTime 1000 server.js"
   },
   "author": {
     "name": "Angular2Buch Team",
     "email": "team@angular2buch.de"
   },
-  "maintainers": [
-    {
-      "name": "johanneshoppe",
-      "email": "johannes.hoppe@haushoppe-its.de"
-    },
-    {
-      "name": "fmalcher",
-      "email": "mail@ferdinand-malcher.de"
-    },
-    {
-      "name": "d-koppenhagen",
-      "email": "mail@d-koppenhagen.de"
-    },
-    {
-      "name": "gregonnet",
-      "email": "gregor.woiwode@gmail.com"
-    }
-  ],
   "license": "MIT",
   "dependencies": {
-    "restify": "^4.3.0",
-    "forever": "^0.15.3",
-    "lodash": "^4.17.2"
+    "restify": "4.3.0",
+    "forever": "~0.15.3",
+    "lodash": "~4.17.2"
   },
-  "keywords": ["ember-addon", "demo", "rest", "crud", "restify", "angular2", "angular-cli", "backend"]
+  "devDependencies": {
+    "@types/restify": "2.0.35",
+    "@types/lodash": "4.14.44",
+    "typescript": "2.1.4"
+  },
+  "keywords": ["demo", "rest", "crud", "restify", "backend"]
 }
