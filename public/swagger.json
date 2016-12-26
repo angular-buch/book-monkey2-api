@@ -3,7 +3,7 @@
     "info": {
         "version": "1.0.0",
         "title": "BookMonkey2 API",
-        "description": "**DEMO**\n\nThis is a simple backend for the Angular 2.0 Demo \"Book Monkey\"\n\nSee [angular-buch.com](https://angular-buch.com/) for more information.\n"
+        "description": "**DEMO**\n\nThis is a simple backend for the Angular Demo \"Book Monkey\"\n\nSee [angular-buch.com](https://angular-buch.com/) for more information.\n"
     },
     "basePath": "/",
     "schemes": [
@@ -312,7 +312,7 @@
                 },
                 "title": {
                     "type": "string",
-                    "example": "Angular2",
+                    "example": "Angular",
                     "description": "Title of the book"
                 },
                 "authors": {
@@ -344,12 +344,12 @@
                 "published": {
                     "type": "string",
                     "format": "date-time",
-                    "example": "2016-06-01T00:00:00.000Z",
+                    "example": "2017-03-01T00:00:00.000Z",
                     "description": "date-time as defined by RFC3339 (http://www.ietf.org/rfc/rfc3339.txt) - like new Date().toISOString();"
                 },
                 "description": {
                     "type": "string",
-                    "example": "Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular 2 am Beispiel erklärt.",
+                    "example": "Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular am Beispiel erklärt.",
                     "description": "Short description of the book"
                 },
                 "thumbnails": {

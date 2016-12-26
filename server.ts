@@ -20,6 +20,9 @@ server.use(bodyParser());
 server.use(CORS({}));
 server.use(queryParser());
 
+
+server.get('/swagger.json', serverController.getFixedSwaggerJson.bind(serverController));
+
 // serve public folder
 server.get(/^(?!\/(book|info)).*/, serveStatic({
   directory: __dirname + '/public/',

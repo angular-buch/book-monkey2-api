@@ -16,6 +16,7 @@ var server = restify_1.createServer({
 server.use(restify_1.bodyParser());
 server.use(restify_1.CORS({}));
 server.use(restify_1.queryParser());
+server.get('/swagger.json', serverController.getFixedSwaggerJson.bind(serverController));
 // serve public folder
 server.get(/^(?!\/(book|info)).*/, restify_1.serveStatic({
     directory: __dirname + '/public/',
