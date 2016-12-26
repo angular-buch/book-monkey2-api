@@ -1,52 +1,60 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>BookMonkey2 API</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
-    <style>
+<head>
+  <title>BookMonkey2 API</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+  <style>
         html {
             font-family: Verdana, Arial, sans-serif;
         }
     </style>
-    <link rel="stylesheet" href="github.css" media="screen">
+<link rel="stylesheet" href="github.css" media="screen">
 </head>
+
 <body>
 
-    <h1>BookMonkey2 API</h1>
-    <img src="images/monkey-thinking.svg" width="250">
+  <h1>BookMonkey2 API</h1>
+  <img src="images/monkey-thinking.svg" width="250">
 
-    <ul>
-        <li><a href="/books">GET /books</a></li>
-    </ul>
+  <ul>
+    <li><a href="/books">GET /books</a></li>
+    <li><a href="/book/9783864903571">GET /book/9783864903571</a></li>
+  </ul>
 
-    <hr> Explorable API documentation: <a href="/swagger-ui/#/book">/swagger-ui/</a><br> OpenAPI Specification: <a href="/swagger.json">/swagger.json</a><br>  BookMonkey2 API v<span id="version"></span><br> Execution time: <span id="time"></span>
+  <hr> Explorable API documentation:
+    <a href="/swagger-ui/#/book">/swagger-ui/</a><br>
+    OpenAPI Specification: <a href="/swagger.json">/swagger.json</a><br>
+    BookMonkey2 API v<span id="version"></span><br>
+    Execution time: <span id="time"></span>
 
-    <span id="forkongithub">
+  <span id="forkongithub">
       <a href="https://github.com/angular-buch/book-monkey2-api">Fork me on GitHub</a>
     </span>
 
-    <script>
-        var format = function(seconds){
-            var pad = function(s){
-                return (s < 10 ? '0' : '') + s;
-            }
-            var hours = Math.floor(seconds / (60*60));
-            var minutes = Math.floor(seconds % (60*60) / 60);
-            var seconds = Math.floor(seconds % 60);
-
-            return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+  <script>
+      var format = function (seconds) {
+        var pad = function (s) {
+          return (s < 10 ? '0' : '') + s;
         }
+        var hours = Math.floor(seconds / (60 * 60));
+        var minutes = Math.floor(seconds % (60 * 60) / 60);
+        var seconds = Math.floor(seconds % 60);
 
-        var r = new XMLHttpRequest();
-        r.addEventListener("load", function () {
-            var json = JSON.parse(this.responseText);
-            document.getElementById('version').innerText = json.version;
-            document.getElementById('time').innerText = format(json.time);
-        });
-        r.open("GET", "/info");
-        r.send();
+        return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+      }
+
+      var r = new XMLHttpRequest();
+      r.addEventListener("load", function () {
+        var json = JSON.parse(this.responseText);
+        document.getElementById('version').innerText = json.version;
+        document.getElementById('time').innerText = format(json.time);
+      });
+      r.open("GET", "/info");
+      r.send();
     </script>
 </body>
+
 </html>
