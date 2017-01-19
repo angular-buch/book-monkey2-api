@@ -7,10 +7,10 @@ export class SomeBooks {
         '9783864903571',
         'Angular',
         ['Gregor Woiwode', 'Ferdinand Malcher', 'Danny Koppenhagen', 'Johannes Hoppe'],
-        new Date('2017-03-01T00:00:00.000Z'),
+        new Date('2017-04-01T12:00:00.000Z'),
         'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
         5,
-        [new Thumbnail('https://angular2buch.de/angular2buch.jpg', 'Front Cover')],
+        [new Thumbnail('https://angular-buch.com/angular2buch.jpg', 'Front Cover')],
         'Mit diesem Buch arbeiten Sie sich durch Googles neuestes Framework und erstellen mit aktuellen Technologien moderne Webanwendungen. Lernen und vertiefen Sie die komponentenorientierte Entwicklung von Single-Page-Anwendungen. Neben den Grundlagen werden auch fortgeschrittene Konzepte von Angular am Beispiel erklärt.'),
       new Book(
         '3864901545',
