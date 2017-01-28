@@ -11,8 +11,8 @@ The API is fully described via swagger. Explore it [here](http://book-monkey2-ap
 
 [![Book](public/images/book-thumbnail.png)](https://angular-buch.com/)
 
-This backend is used to explain HTTP communication with Angular 2.  
-Read more about Angular 2 in our book. Visit [angular-buch.com](https://angular-buch.com/) for more information (German only).
+This backend is used to explain HTTP communication with Angular.  
+Read more about Angular in our book. Visit [angular-buch.com](https://angular-buch.com/) for more information (German only).
 
 # Usage
 
@@ -37,19 +37,6 @@ npm start
 ```
 
 Open __http://localhost:3000/__ in your brower.
-
-## Angular-CLI
-
-This package is a [ember-cli](http://ember-cli.com/) / [angular-cli](https://github.com/angular/angular-cli) addon, too.  
-Add it to the `node_modules` folder and it will be automatically available as a new command.
-
-```
-cd <your-angular-cli-project>
-npm install book-monkey2-api --save-dev
-ng monkey
-```
-
-<!--![ng serve](public/images/ng-serve.png)-->
 
 
 # License
