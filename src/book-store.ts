@@ -19,6 +19,24 @@ export class BookStore {
       .value();
   };
 
+  getAllBySearch(searchTerm: string): Book[] {
+
+    searchTerm = searchTerm.toLowerCase();
+    let containsSearchTerm = (checked) => ~checked.toLowerCase().indexOf(searchTerm);
+
+    return _(this.books)
+      .filter(b =>
+          containsSearchTerm(b.isbn) ||
+          containsSearchTerm(b.title) ||
+          _.some(b.authors, containsSearchTerm) ||
+          containsSearchTerm(b.published.toISOString()) ||
+          containsSearchTerm(b.subtitle) ||
+          containsSearchTerm(b.description))
+      .sortBy(b => b.isbn)
+      .reverse()
+      .value();
+  };
+
   getByIsbn(isbn: string) {
     isbn = BookFactory.normalizeIsbn(isbn);
     return this.books.find(book => book.isbn === isbn)

@@ -13,6 +13,14 @@ export class BookStoreController {
     next();
   };
 
+  getAllBySearch(req, res, next) {
+
+    let searchTerm = req.params.search;
+
+    res.send(this.store.getAllBySearch(searchTerm), { 'Content-Type': 'application/json; charset=utf-8' });
+    next();
+  };
+
   getByISBN(req, res, next) {
 
     let isbn = req.params.isbn;

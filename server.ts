@@ -31,6 +31,7 @@ server.get(/^(?!\/(book|info)).*/, serveStatic({
 
 // API routes
 server.get('/books', bsController.getAll.bind(bsController));
+server.get('/books/search/:search', bsController.getAllBySearch.bind(bsController));
 server.del('/books', bsController.reset.bind(bsController));
 server.post('/book', bsController.create.bind(bsController));
 server.post('/book/:isbn/rate', bsController.rate.bind(bsController));

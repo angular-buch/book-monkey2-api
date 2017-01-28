@@ -65,6 +65,41 @@
                 }
             }
         },
+        "/books/search/{searchTerm}": {
+            "get": {
+                "tags": [
+                    "book"
+                ],
+                "summary": "Get all books matching the given search term (case insensitive). The properties isbn, title, authors, published (interpreted as ISO string), subtitle and description are evaluated for a match.",
+                "parameters": [
+                    {
+                        "name": "searchTerm",
+                        "in": "path",
+                        "type": "string",
+                        "description": "search term (treated case insensitive)",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of all books matching the give search term",
+                        "schema": {
+                            "title": "Books",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Book"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unexpected Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/RestError"
+                        }
+                    }
+                }
+            }
+        },
         "/book": {
             "post": {
                 "tags": [
