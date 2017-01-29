@@ -1,0 +1,18 @@
+# docker-specific
+.git
+tmp
+
+# from .gitignore
+node_modules
+npm-debug.log
+
+server.d.ts
+server.js.map
+server.js
+
+src/**/*.d.ts
+src/**/*.js.map
+src/**/*.js
+
+.DS_Store
+debug.log
