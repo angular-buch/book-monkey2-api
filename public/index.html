@@ -10,7 +10,14 @@
         html {
             font-family: Verdana, Arial, sans-serif;
         }
-    </style>
+  </style>
+
+  <script>
+    if (~window.location.hostname.indexOf('ng-buch.de') || ~window.location.hostname.indexOf('ngbuch.de')) {
+      window.location = "https://angular-buch.com/";
+    }
+  </script>
+
 <link rel="stylesheet" href="github.css" media="screen">
 </head>
 
@@ -55,13 +62,6 @@
       r.open("GET", "/info");
       r.send();
   </script>
-
-  <script>
-    if (~window.location.hostname.indexOf('ng-buch.de') || ~window.location.hostname.indexOf('ngbuch.de')) {
-      window.location = "https://angular-buch.com/";
-    }
-  </script>
-
 </body>
 
 </html>
