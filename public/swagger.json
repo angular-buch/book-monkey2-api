@@ -406,7 +406,7 @@
             "properties": {
                 "url": {
                     "type": "string",
-                    "example": "https://angular-buch.com/angular-buch.jpg",
+                    "example": "https://ng-buch.de/cover2.jpg",
                     "description": "Image to display"
                 },
                 "title": {
