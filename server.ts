@@ -1,13 +1,14 @@
 import { createServer, bodyParser, CORS, queryParser, serveStatic } from 'restify';
 
-import { BookStoreController } from './src/book-store-controller'
+import { BookStoreController } from './src/book-store-controller';
 import { BookStore } from './src/book-store';
-import { ServerController } from './src/server-controller'
+import { ServerController } from './src/server-controller';
+import { RedirectController } from './src/redirect-controller';
 
 let port = 3000;
 let bsController = new BookStoreController(new BookStore());
 let serverController = new ServerController();
-
+let redirectController = new RedirectController();
 
 var server = createServer({
   formatters: {
@@ -22,6 +23,9 @@ server.use(queryParser());
 
 
 server.get('/swagger.json', serverController.getFixedSwaggerJson.bind(serverController));
+
+// serve redirects
+server.get(/^\/(app|bm|it|ngh|one|start|two|b\/)/, redirectController.redirect.bind(redirectController));
 
 // serve public folder
 server.get(/^(?!\/(book|info)).*/, serveStatic({
