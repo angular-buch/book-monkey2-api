@@ -128,5 +128,7 @@
     "b/103": "https://github.com/tc39/proposal-observable",
     "b/104": "https://github.com/ReactiveX/rxjs",
     "b/105": "https://netbasal.com/8da0788a8d2",
-    "b/106": "https://github.com/angular-buch/book-monkey-nativescript/blob/master/app/app.css"
+    "b/106": "https://github.com/angular-buch/book-monkey-nativescript/blob/master/app/app.css",
+    "cover2.jpg": "https://angular-buch.com/angular-buch.jpg",
+    "cover1.jpg": "https://angular-buch.com/angularjs-buch.jpg"
 }
