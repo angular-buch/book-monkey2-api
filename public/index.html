@@ -54,7 +54,14 @@
       });
       r.open("GET", "/info");
       r.send();
-    </script>
+  </script>
+
+  <script>
+    if (~window.location.hostname.indexOf('ng-buch.de') || ~window.location.hostname.indexOf('ngbuch.de')) {
+      window.location = "https://angular-buch.com/";
+    }
+  </script>
+
 </body>
 
 </html>
