@@ -1,5 +1,6 @@
 {
     "app": "https://book-monkey2.angular-buch.com",
+    "app-code": "https://github.com/angular-buch/book-monkey2",
     "bm-native": "https://github.com/angular-buch/book-monkey-nativescript",
     "bm-rdx": "https://github.com/angular-buch/book-monkey-rdx",
     "it1-comp": "https://github.com/book-monkey2-build/iteration-1-components",
@@ -18,6 +19,7 @@
     "it6-lazy": "https://github.com/book-monkey2-build/iteration-6-lazy-loading",
     "it6-modules": "https://github.com/book-monkey2-build/iteration-6-modules",
     "it6-resolver": "https://github.com/book-monkey2-build/iteration-6-resolver",
+    "it7-i18n": "https://github.com/book-monkey2-build/iteration-7-i18n",
     "ngh": "https://github.com/angular-buch/angular-cli-ghpages",
     "one-app": "https://github.com/book-monkey2-build/one-app",
     "start": "https://github.com/angular-buch/schnellstart",
