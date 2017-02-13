@@ -9,7 +9,7 @@ The API is fully described via swagger. Explore it [here](http://book-monkey2-ap
 
 # The book
 
-[![Book](public/images/book-thumbnail.png)](https://angular-buch.com/)
+[![Book](https://ng-buch.de/cover2.jpg)](https://angular-buch.com/)
 
 This backend is used to explain HTTP communication with Angular.  
 Read more about Angular in our book. Visit [angular-buch.com](https://angular-buch.com/) for more information (German only).
