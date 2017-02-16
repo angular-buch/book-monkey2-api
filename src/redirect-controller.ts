@@ -8,13 +8,13 @@ export class RedirectController {
     return url ? url.toLowerCase()
       .replace('-', '')
       .replace(/^\//, '')
-      .replace(/\.git$/, '') : 'FALSY';
+      .replace(/\.git.*/, '') : 'FALSY';
   }
 
   redirect(req, res, next) {
 
     let currentUrl = this.normalizeUrl(req.url);
-    let isGitUrl = _.endsWith(req.url, '.git'); // attach .git to the redirect target if shortlink ends with .git
+    let isGitUrl = !!~req.url.indexOf('.git');
 
     var match = _(urlmapping)
       .find((redirectUrl, redirectMatch) => {
@@ -24,7 +24,14 @@ export class RedirectController {
       });
 
     if (match) {
-      return res.redirect(302, isGitUrl ? match + '.git' : match, next);
+
+      // attach .git* to the redirect target if shortlink contains .git
+      if (isGitUrl) {
+        var parts = req.url.split('.git');
+        match = match + '.git' + parts[1];
+      }
+
+      return res.redirect(301, match, next);
     }
 
     // nothing found
