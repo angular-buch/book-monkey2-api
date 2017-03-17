@@ -25,6 +25,7 @@ server.use(queryParser());
 server.get('/swagger.json', serverController.getFixedSwaggerJson.bind(serverController));
 
 // serve redirects
+server.get(/^\/(a\/|avatar\/)/, redirectController.avatarRedirect.bind(redirectController));
 server.get(/^\/(app|bm|it|ngh|start|two|cover|b\/|x\/)/, redirectController.redirect.bind(redirectController));
 
 // serve public folder

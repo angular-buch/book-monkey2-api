@@ -8,7 +8,7 @@ export class RedirectController {
     return url ? url.toLowerCase()
       .replace('-', '')
       .replace(/^\//, '')
-      .replace(/\.git.*/, '') : 'FALSY';
+      .replace(/\.git.*/, '') : 'NO_URL_SOMETHING_WENT_WRONG';
   }
 
   redirect(req, res, next) {
@@ -18,7 +18,6 @@ export class RedirectController {
 
     var match = _(urlmapping)
       .find((redirectUrl, redirectMatch) => {
-
         let normalizeMapping = this.normalizeUrl(redirectMatch);
         return ~normalizeMapping.indexOf(currentUrl);
       });
@@ -36,5 +35,12 @@ export class RedirectController {
 
     // nothing found
     return res.redirect(302, 'https://angular-buch.com', next);
+  }
+
+  // /a/xxx or /avatar/XXX to https://gravatar.com/avatar/XXX?s=80&default=wavatar
+  avatarRedirect(req, res, next) {
+    let data = req.url.replace(/^\/(a\/|avatar\/)/, '');
+    let redirect = `https://gravatar.com/avatar/${data}?s=80&default=wavatar`;
+    return res.redirect(301, redirect, next);
   }
 }
