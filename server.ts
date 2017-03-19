@@ -2,7 +2,7 @@ import { createServer, bodyParser, CORS, queryParser, serveStatic } from 'restif
 
 import { BookStoreController } from './src/book-store-controller';
 import { BookStore } from './src/book-store';
-import { ServerController } from './src/server-controller';
+import { ServerController, saveStringify } from './src/server-controller';
 import { RedirectController } from './src/redirect-controller';
 
 let port = 3000;
@@ -13,7 +13,7 @@ let redirectController = new RedirectController();
 var server = createServer({
   formatters: {
     'application/json': function (req, res, body, cb) {
-      return cb(null, JSON.stringify(body, null, '  '));
+      return cb(null, saveStringify(body));
     }
   }
 });

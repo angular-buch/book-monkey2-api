@@ -38,3 +38,24 @@ export class ServerController {
     });
   }
 }
+
+// JSON.stringify, avoid TypeError: Converting circular structure to JSON
+// see: http://stackoverflow.com/a/11616993
+export function saveStringify (o) {
+    var cache = [];
+    var replacer = (key, value) =>  {
+        if (typeof value === 'object' && value !== null) {
+            if (cache.indexOf(value) !== -1) {
+                // circular reference found, discard key
+                return undefined;
+            }
+            // Store value in our collection
+            cache.push(value);
+        }
+        return value;
+    };
+
+    var result = JSON.stringify(o, replacer, 2);
+    cache = null; // Enable garbage collection
+    return result;
+};
