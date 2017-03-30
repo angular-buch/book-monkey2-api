@@ -1,4 +1,5 @@
 import { createServer, bodyParser, CORS, queryParser, serveStatic } from 'restify';
+import { CronJob } from 'cron';
 
 import { BookStoreController } from './src/book-store-controller';
 import { BookStore } from './src/book-store';
@@ -50,3 +51,26 @@ server.get('/info', serverController.info.bind(serverController));
 server.listen(port, function () {
   console.log('BookMonkey2 API server on %s', server.url);
 });
+
+/*
+  crontab every day at 1am => 0 1 * * *
+
+    *    *    *    *    *    *
+    ┬    ┬    ┬    ┬    ┬    ┬
+    │    │    │    │    │    |
+    │    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
+    │    │    │    │    └───── month (1 - 12)
+    │    │    │    └────────── day of month (1 - 31)
+    │    │    └─────────────── hour (0 - 23)
+    │    └──────────────────── minute (0 - 59)
+    └───────────────────────── second (0 - 59, OPTIONAL)
+
+*/
+new CronJob('0 1 * * *', () => {
+  console.log('Starting cleanup...');
+  bsController.reset(null, null, null);
+},
+  null, // This function is executed when the job stops
+  true, // If left at default you will need to call job.start() in order to start the job
+  'Europe/Berlin' // Time zone of this job
+);

@@ -1,6 +1,6 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "REST Server Backend for the BookMonkey2 demo",
   "repository": {
     "type": "git",
@@ -20,13 +20,15 @@
   },
   "license": "MIT",
   "dependencies": {
+    "cron": "1.2.1",
     "restify": "4.3.0",
     "forever": "~0.15.3",
-    "lodash": "~4.17.2",
-    "typescript": "2.1.4",
+    "lodash": "~4.17.4",
+    "typescript": "2.2.2",
+    "@types/cron": "1.2.0",
     "@types/node": "6.0.53",
-    "@types/restify": "2.0.38",
-    "@types/lodash": "4.14.44"
+    "@types/restify": "2.0.42",
+    "@types/lodash": "4.14.59"
   },
   "keywords": ["demo", "rest", "crud", "restify", "backend"]
 }
