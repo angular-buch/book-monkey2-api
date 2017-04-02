@@ -8,7 +8,7 @@ export class SomeBooks {
         'Angular',
         ['Gregor Woiwode', 'Ferdinand Malcher', 'Danny Koppenhagen', 'Johannes Hoppe'],
         new Date('2017-04-01T12:00:00.000Z'),
-        'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
+        'Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript - ab Angular 4, inklusive NativeScript und Redux',
         5,
         [new Thumbnail('https://ng-buch.de/cover2.jpg', 'Front Cover')],
         `Mit Angular setzen Sie auf ein modernes und modulares Web-Framework. Dieses Buch stellt Ihnen die Bausteine von Angular, viele Best Practices und die notwendigen Werkzeuge vor. Beginnen Sie Ihren Einstieg in die Welt von Angular mit einer praxisnahen Einführung.
