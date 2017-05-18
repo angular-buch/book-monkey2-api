@@ -27,7 +27,7 @@ server.get('/swagger.json', serverController.getFixedSwaggerJson.bind(serverCont
 
 // serve redirects
 server.get(/^\/(a\/|avatar\/)/, redirectController.avatarRedirect.bind(redirectController));
-server.get(/^\/(app|bm|it|ngh|start|two|cover|b\/|x\/)/, redirectController.redirect.bind(redirectController));
+server.get(/^\/(app|bm|it|ngh|start|two|cover|quotes|b\/|x\/)/, redirectController.redirect.bind(redirectController));
 
 // serve public folder
 server.get(/^(?!\/(book|info)).*/, serveStatic({
