@@ -10,8 +10,8 @@
     "url": "https://github.com/angular-buch/book-monkey2-api/issues"
   },
   "scripts": {
-    "build": "tsc",
-    "start": "tsc && node server.js",
+    "install": "tsc",
+    "start": "node server.js",
     "startForever": "tsc && forever --minUptime 1000 --spinSleepTime 1000 server.js"
   },
   "author": {
