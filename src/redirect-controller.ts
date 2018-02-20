@@ -30,10 +30,12 @@ export class RedirectController {
         match = match + '.git' + parts[1];
       }
 
+      res.set('X-Redirect-Reason', 'Urlmapping Match (' + match + ')');
       return res.redirect(301, match, next);
     }
 
     // nothing found
+    res.set('X-Redirect-Reason', 'Nothing Found');
     return res.redirect(302, 'https://angular-buch.com', next);
   }
 
@@ -41,6 +43,8 @@ export class RedirectController {
   avatarRedirect(req, res, next) {
     let data = req.url.replace(/^\/(a\/|avatar\/)/, '');
     let redirect = `https://gravatar.com/avatar/${data}?s=80&default=wavatar`;
+
+    res.set('X-Redirect-Reason', 'Avatar Shortener');
     return res.redirect(301, redirect, next);
   }
 }
