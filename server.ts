@@ -6,7 +6,8 @@ import { BookStore } from './src/book-store';
 import { ServerController, saveStringify } from './src/server-controller';
 import { RedirectController } from './src/redirect-controller';
 
-let port = 80;
+const PORT = process.env.PORT || 4000;
+
 let bsController = new BookStoreController(new BookStore());
 let serverController = new ServerController();
 let redirectController = new RedirectController();
@@ -48,7 +49,7 @@ server.del('/book/:isbn', bsController.delete.bind(bsController));
 server.get('/info', serverController.info.bind(serverController));
 
 // start server
-server.listen(port, function () {
+server.listen(PORT, function () {
   console.log('BookMonkey2 API server on %s', server.url);
 });
 

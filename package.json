@@ -1,7 +1,10 @@
 {
   "name": "book-monkey2-api",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "REST Server Backend for the BookMonkey2 demo",
+  "engines": {
+    "node": "9.4.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular-buch/book-monkey2-api.git"
@@ -10,7 +13,7 @@
     "url": "https://github.com/angular-buch/book-monkey2-api/issues"
   },
   "scripts": {
-    "prestart": "tsc",
+    "build": "tsc",
     "start": "node server.js",
     "startForever": "tsc && forever --minUptime 1000 --spinSleepTime 1000 server.js"
   },
@@ -30,5 +33,11 @@
     "@types/restify": "2.0.42",
     "@types/lodash": "4.14.59"
   },
-  "keywords": ["demo", "rest", "crud", "restify", "backend"]
+  "keywords": [
+    "demo",
+    "rest",
+    "crud",
+    "restify",
+    "backend"
+  ]
 }

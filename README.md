@@ -33,10 +33,11 @@ Execute the following commands to start the standalone-server:
 git clone https://github.com/angular-buch/book-monkey2-api.git
 cd book-monkey2-api
 npm install
+npm run build
 npm start
 ```
 
-Open __http://localhost:3000/__ in your brower.
+Open __http://localhost:80/__ in your brower.
 
 
 # License
