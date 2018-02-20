@@ -6,7 +6,7 @@ import { BookStore } from './src/book-store';
 import { ServerController, saveStringify } from './src/server-controller';
 import { RedirectController } from './src/redirect-controller';
 
-let port = 3000;
+let port = 80;
 let bsController = new BookStoreController(new BookStore());
 let serverController = new ServerController();
 let redirectController = new RedirectController();
